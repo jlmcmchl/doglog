@@ -4,11 +4,10 @@ import dev.doglog.internal.writers.LogWriterHighLevel;
 import edu.wpi.first.hal.HALUtil;
 import edu.wpi.first.wpilibj.Alert;
 import edu.wpi.first.wpilibj.Alert.AlertType;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 import org.jspecify.annotations.Nullable;
 
@@ -22,7 +21,7 @@ public class FaultLogger {
   private static final Map<String, Alert> FAULT_ALERTS = new ConcurrentHashMap<>();
 
   /** Faults that are currently active. */
-  private static final Set<String> ACTIVE_FAULTS = new HashSet<>();
+  private static final Set<String> ACTIVE_FAULTS = new ConcurrentSkipListSet<>();
 
   // This function doesn't need to have the LogConsumer parameter, it could just call DogLog
   // directly. But doing that would mean getting the current time twice, which can be avoided by
