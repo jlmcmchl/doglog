@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.jspecify.annotations.Nullable;
 
 /**
@@ -16,8 +18,8 @@ import org.jspecify.annotations.Nullable;
  * interface to logging errors that writes to both NT and DataLog.
  */
 public class FaultLogger {
-  private static final Map<String, Integer> FAULT_COUNTS = new HashMap<>();
-  private static final Map<String, Alert> FAULT_ALERTS = new HashMap<>();
+  private static final Map<String, Integer> FAULT_COUNTS = new ConcurrentHashMap<>();
+  private static final Map<String, Alert> FAULT_ALERTS = new ConcurrentHashMap<>();
 
   /** Faults that are currently active. */
   private static final Set<String> ACTIVE_FAULTS = new HashSet<>();
