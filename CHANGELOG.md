@@ -1,5 +1,45 @@
 # Changelog
 
+## [2027.0.0](https://github.com/jlmcmchl/doglog/compare/2026.5.0...2027.0.0) (2026-04-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* update to WPILib 2026 ([#139](https://github.com/jlmcmchl/doglog/issues/139))
+
+### Features
+
+* add DogLog.time() and DogLog.timeEnd() ([dec65f3](https://github.com/jlmcmchl/doglog/commit/dec65f313382fcfcd67095bef13d6433b08dcbbf))
+* add DogLog.time() overload for timing commands ([10deabc](https://github.com/jlmcmchl/doglog/commit/10deabc75ca950994172218ab0e1cfb66327854a))
+* add logging of enums and records using StructGenerator ([#146](https://github.com/jlmcmchl/doglog/issues/146)) ([98653a5](https://github.com/jlmcmchl/doglog/commit/98653a5bb3e6e8a769ef3337856e2014d0b75ae4))
+* add tunable double arrays ([0fc4622](https://github.com/jlmcmchl/doglog/commit/0fc46229256a0d1c1fa174cb66740c231d2c5da0))
+* expose Subscriber interface in DogLog.tunable() ([2af286e](https://github.com/jlmcmchl/doglog/commit/2af286e1b1fadae779ddf15b1f426806676a5b95))
+* gracefully handle WPILib's broken struct generation for enums ([ace84eb](https://github.com/jlmcmchl/doglog/commit/ace84eb7ce66210354021ef8a2e8b8283bc05c68))
+* improve functionality of DogLog.time() for commands ([ad58793](https://github.com/jlmcmchl/doglog/commit/ad587939aee3201020768cfb85eb868a93888252))
+* mark DogLog as source in DataLog entry metadata ([0dff3d2](https://github.com/jlmcmchl/doglog/commit/0dff3d2bf8e60445bc6d087f055fa98dbbe3a9c4))
+* mark DogLog as source in NetworkTables topic properties ([224fc37](https://github.com/jlmcmchl/doglog/commit/224fc375148563fa9746f45290bf882c46590944))
+* support disabling tunable values over NT ([#80](https://github.com/jlmcmchl/doglog/issues/80)) ([4b7ccdd](https://github.com/jlmcmchl/doglog/commit/4b7ccdd1a6dddeca9f26ea1dc0d1b498de0b76eb))
+* support forced NetworkTables publishing for some logs ([#150](https://github.com/jlmcmchl/doglog/issues/150)) ([ef44414](https://github.com/jlmcmchl/doglog/commit/ef444146d17ec49fb3d7d3d8117d9898b61d3192))
+* support including units in logged numbers ([#128](https://github.com/jlmcmchl/doglog/issues/128)) ([14b4851](https://github.com/jlmcmchl/doglog/commit/14b485134d37a521199f112eac0ad87b3aae4e09))
+* support toggling log processing thread on or off ([#125](https://github.com/jlmcmchl/doglog/issues/125)) ([9a96247](https://github.com/jlmcmchl/doglog/commit/9a962472e3e8c5c5bbd07472c06bdebdad513be5))
+* update to stable release of WPILib 2026 ([#147](https://github.com/jlmcmchl/doglog/issues/147)) ([9c2bb1e](https://github.com/jlmcmchl/doglog/commit/9c2bb1e3fda59cb76a0f58e6e4ff9113e7606705))
+* update to WPILib 2026 ([#139](https://github.com/jlmcmchl/doglog/issues/139)) ([853b085](https://github.com/jlmcmchl/doglog/commit/853b085fb8629742444bcd95fd8f43aab51cf7ca))
+
+
+### Bug Fixes
+
+* build with JDK 21 ([c667579](https://github.com/jlmcmchl/doglog/commit/c6675790631d1274098f9f9a9978ab3f73acf203))
+* change frcYear to 2026beta ([a38ff20](https://github.com/jlmcmchl/doglog/commit/a38ff20c4909880dab9f2e4c7afc06547684568c))
+* fix incorrect implementation of getLastChange() in toggleable subscriber classes ([a2eb98d](https://github.com/jlmcmchl/doglog/commit/a2eb98d783335b236a0bb8e8d7380c6cd8f6b6e1))
+* fix NullPointerException when dispatching tunable onChange events ([d022a75](https://github.com/jlmcmchl/doglog/commit/d022a75a4e7f5e04bcdb189f207f33ecef0ebc6b))
+* fix onChange logic for tunables when repeatedly toggling ntTunables ([714ebbe](https://github.com/jlmcmchl/doglog/commit/714ebbec6a58f5ff0228bf327b8d764a0d15d0d4))
+* fix options in Tunable being null until setOptions() is called ([bdb570f](https://github.com/jlmcmchl/doglog/commit/bdb570f55f184f77a159ba2f7516db93a1f826a5))
+* make DogLog.time() for commands static ([6c5064b](https://github.com/jlmcmchl/doglog/commit/6c5064b0378bfcee5d0babbc83b576af83044518))
+* prevent NT capture from being enabled before DogLog init finishes ([c3cf42e](https://github.com/jlmcmchl/doglog/commit/c3cf42e1f620d4f1465ff8dee23f5f7258bdf23b))
+* provide timestamp when updating datalog unit metadata ([de590f4](https://github.com/jlmcmchl/doglog/commit/de590f48c4444e41b3e3607f4e37263003dc727b))
+* register Commands as composed once in DogLog.time() ([#153](https://github.com/jlmcmchl/doglog/issues/153)) ([4a20e0c](https://github.com/jlmcmchl/doglog/commit/4a20e0c20d69eec0a90afbfbbcf1d28934729507))
+* synchronize DataLog entry timestamp with value update timestamp ([a9a82c7](https://github.com/jlmcmchl/doglog/commit/a9a82c72dd130f87b8c1e00abf4d35d95f1cebb1))
+
 ## [2026.5.0](https://github.com/jonahsnider/doglog/compare/2026.4.0...2026.5.0) (2026-02-11)
 
 
