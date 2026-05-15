@@ -59,13 +59,13 @@ public class ThreadedLogWriter implements LogWriterHighLevel {
     }
 
     if (queueFullMessageCount == MAX_QUEUE_FULL_MESSAGES) {
-      DriverStation.reportError(
+      DriverStationErrors.reportError(
           "[DogLog] MAX_QUEUED_LOGS: Log queue is full, dropping log entry for "
               + key
               + " (additional messages will not be printed)",
           true);
     } else if (queueFullMessageCount < MAX_QUEUE_FULL_MESSAGES) {
-      DriverStation.reportError(
+      DriverStationErrors.reportError(
           "[DogLog] MAX_QUEUED_LOGS: Log queue is full, dropping log entry for " + key, false);
     }
   }
@@ -281,7 +281,7 @@ public class ThreadedLogWriter implements LogWriterHighLevel {
       logThread.interrupt();
 
       if (oldQueueMaxCapacity > newQueueMaxCapacity) {
-        DriverStation.reportWarning(
+        DriverStationErrors.reportWarning(
             "[DogLog] RISKY_QUEUE_RESIZE: New queue capacity is smaller than the old queue capacity, this has the potential to drop queued log entries",
             false);
         FaultLogger.addFault(this, "[DogLog] RISKY_QUEUE_RESIZE", Level.MEDIUM);
@@ -291,7 +291,7 @@ public class ThreadedLogWriter implements LogWriterHighLevel {
 
       var droppedLogs = queue.size();
       if (droppedLogs > 0) {
-        DriverStation.reportError(
+        DriverStationErrors.reportError(
             "[DogLog] QUEUE_RESIZE_DROPPED_LOGS: New queue capacity is too small, dropping "
                 + droppedLogs
                 + " log entries",
