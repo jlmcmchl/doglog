@@ -28,7 +28,7 @@ public class NetworkTablesWriter implements AutoCloseable, LogWriterLowLevel {
   private static final String PROPERTY_SOURCE_NAME = "source";
   private static final String PROPERTY_SOURCE_VALUE = "\"DogLog\"";
 
-  private static final PubSubOption PUB_SUB_OPTIONS = PubSubOption.sendAll(true);
+  private static final PubSubOption PUB_SUB_OPTIONS = PubSubOption.SEND_ALL;
 
   /** Updates the unit property of a numeric topic. */
   private static void updateUnitForTopic(

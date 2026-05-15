@@ -28,7 +28,7 @@ public class FaultLogger {
     var newCount = previousCount == null ? 1 : previousCount + 1;
     faultCounts.put(faultName, newCount);
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
 
     if (previousCount == null) {
       // A new fault has been seen
@@ -47,14 +47,14 @@ public class FaultLogger {
    *
    * @param logger LogConsumer to use.
    * @param faultName The name of the fault to log.
-   * @param alertType The type of alert to create for the fault, or <code>null</code> if it should
+   * @param level The level of alert to create for the fault, or <code>null</code> if it should
    *     not create an alert
    */
   public static void addFault(
-      LogWriterHighLevel logger, String faultName, @Nullable AlertType alertType) {
+      LogWriterHighLevel logger, String faultName, Alert.Level level) {
     addFault(logger, faultName);
-    if (alertType != null) {
-      faultAlerts.computeIfAbsent(faultName, k -> new Alert(faultName, alertType)).set(true);
+    if (level != null) {
+      faultAlerts.computeIfAbsent(faultName, k -> new Alert(faultName, level)).set(true);
     }
   }
 
@@ -73,7 +73,7 @@ public class FaultLogger {
     var newCount = previousCount - 1;
     faultCounts.put(faultName, newCount);
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, "Faults/Counts/" + faultName, newCount);
 
     if (newCount == 0) {
@@ -95,7 +95,7 @@ public class FaultLogger {
     var previousValue = faultCounts.replace(faultName, 0);
 
     if (previousValue != null) {
-      var now = HALUtil.getFPGATime();
+      var now = HALUtil.getMonotonicTime();
       logger.log(now, "Faults/Counts/" + faultName, 0);
 
       var alert = faultAlerts.get(faultName);

@@ -69,7 +69,7 @@ public class ExtrasLogger implements AutoCloseable {
   private void log() {
     // Instead of logging directly to DogLog, we write logs to the consumer directly. This lets us
     // get the timestamp a single time and reuse that value for all log entries.
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
 
     logSystem(now);
     logCan(now);
@@ -77,34 +77,34 @@ public class ExtrasLogger implements AutoCloseable {
   }
 
   private void logSystem(long now) {
-    logger.log(now, "SystemStats/FPGAVersion", HALUtil.getFPGAVersion());
-    logger.log(now, "SystemStats/FPGARevision", HALUtil.getFPGARevision());
+    // logger.log(now, "SystemStats/FPGAVersion", HALUtil.getFPGAVersion());
+    // logger.log(now, "SystemStats/FPGARevision", HALUtil.getFPGARevision());
     logger.log(now, "SystemStats/SerialNumber", HALUtil.getSerialNumber());
     logger.log(now, "SystemStats/Comments", HALUtil.getComments());
     logger.log(now, "SystemStats/TeamNumber", HALUtil.getTeamNumber());
-    logger.log(now, "SystemStats/FPGAButton", HALUtil.getFPGAButton());
+    // logger.log(now, "SystemStats/FPGAButton", HALUtil.getFPGAButton());
     logger.log(now, "SystemStats/SystemActive", HAL.getSystemActive());
     logger.log(now, "SystemStats/BrownedOut", HAL.getBrownedOut());
     logger.log(now, "SystemStats/RSLState", HAL.getRSLState());
     logger.log(now, "SystemStats/SystemTimeValid", HAL.getSystemTimeValid());
 
     logger.log(now, "SystemStats/BatteryVoltage", PowerJNI.getVinVoltage(), VOLTS_UNIT_STRING);
-    logger.log(now, "SystemStats/BatteryCurrent", PowerJNI.getVinCurrent(), AMPS_UNIT_STRING);
+    // logger.log(now, "SystemStats/BatteryCurrent", PowerJNI.getVinCurrent(), AMPS_UNIT_STRING);
 
     logger.log(now, "SystemStats/3v3Rail/Voltage", PowerJNI.getUserVoltage3V3(), VOLTS_UNIT_STRING);
     logger.log(now, "SystemStats/3v3Rail/Current", PowerJNI.getUserCurrent3V3(), AMPS_UNIT_STRING);
     logger.log(now, "SystemStats/3v3Rail/Active", PowerJNI.getUserActive3V3());
     logger.log(now, "SystemStats/3v3Rail/CurrentFaults", PowerJNI.getUserCurrentFaults3V3());
 
-    logger.log(now, "SystemStats/5vRail/Voltage", PowerJNI.getUserVoltage5V(), VOLTS_UNIT_STRING);
-    logger.log(now, "SystemStats/5vRail/Current", PowerJNI.getUserCurrent5V(), AMPS_UNIT_STRING);
-    logger.log(now, "SystemStats/5vRail/Active", PowerJNI.getUserActive5V());
-    logger.log(now, "SystemStats/5vRail/CurrentFaults", PowerJNI.getUserCurrentFaults5V());
+    // logger.log(now, "SystemStats/5vRail/Voltage", PowerJNI.getUserVoltage5V(), VOLTS_UNIT_STRING);
+    // logger.log(now, "SystemStats/5vRail/Current", PowerJNI.getUserCurrent5V(), AMPS_UNIT_STRING);
+    // logger.log(now, "SystemStats/5vRail/Active", PowerJNI.getUserActive5V());
+    // logger.log(now, "SystemStats/5vRail/CurrentFaults", PowerJNI.getUserCurrentFaults5V());
 
-    logger.log(now, "SystemStats/6vRail/Voltage", PowerJNI.getUserVoltage6V(), VOLTS_UNIT_STRING);
-    logger.log(now, "SystemStats/6vRail/Current", PowerJNI.getUserCurrent6V(), AMPS_UNIT_STRING);
-    logger.log(now, "SystemStats/6vRail/Active", PowerJNI.getUserActive6V());
-    logger.log(now, "SystemStats/6vRail/CurrentFaults", PowerJNI.getUserCurrentFaults6V());
+    // logger.log(now, "SystemStats/6vRail/Voltage", PowerJNI.getUserVoltage6V(), VOLTS_UNIT_STRING);
+    // logger.log(now, "SystemStats/6vRail/Current", PowerJNI.getUserCurrent6V(), AMPS_UNIT_STRING);
+    // logger.log(now, "SystemStats/6vRail/Active", PowerJNI.getUserActive6V());
+    // logger.log(now, "SystemStats/6vRail/CurrentFaults", PowerJNI.getUserCurrentFaults6V());
 
     logger.log(
         now, "SystemStats/BrownoutVoltage", PowerJNI.getBrownoutVoltage(), VOLTS_UNIT_STRING);
@@ -112,14 +112,45 @@ public class ExtrasLogger implements AutoCloseable {
   }
 
   private void logCan(long now) {
-    CANJNI.getCANStatus(status);
-    logger.log(now, "SystemStats/CANBus/Utilization", status.percentBusUtilization);
-    logger.log(now, "SystemStats/CANBus/OffCount", status.busOffCount);
-    logger.log(now, "SystemStats/CANBus/TxFullCount", status.txFullCount);
-    logger.log(now, "SystemStats/CANBus/ReceiveErrorCount", status.receiveErrorCount);
-    logger.log(now, "SystemStats/CANBus/TransmitErrorCount", status.transmitErrorCount);
+    CANJNI.getCANStatus(0, status);
+    logger.log(now, "SystemStats/CANBus/can-s0/Utilization", status.percentBusUtilization);
+    logger.log(now, "SystemStats/CANBus/can-s0/OffCount", status.busOffCount);
+    logger.log(now, "SystemStats/CANBus/can-s0/TxFullCount", status.txFullCount);
+    logger.log(now, "SystemStats/CANBus/can-s0/ReceiveErrorCount", status.receiveErrorCount);
+    logger.log(now, "SystemStats/CANBus/can-s0/TransmitErrorCount", status.transmitErrorCount);
 
-    logger.log(now, "SystemStats/EpochTimeMicros", HALUtil.getFPGATime(), MICROSECONDS_UNIT_STRING);
+    CANJNI.getCANStatus(1, status);
+    logger.log(now, "SystemStats/CANBus/can-s1/Utilization", status.percentBusUtilization);
+    logger.log(now, "SystemStats/CANBus/can-s1/OffCount", status.busOffCount);
+    logger.log(now, "SystemStats/CANBus/can-s1/TxFullCount", status.txFullCount);
+    logger.log(now, "SystemStats/CANBus/can-s1/ReceiveErrorCount", status.receiveErrorCount);
+    logger.log(now, "SystemStats/CANBus/can-s1/TransmitErrorCount", status.transmitErrorCount);
+
+
+    CANJNI.getCANStatus(2, status);
+    logger.log(now, "SystemStats/CANBus/can-s2/Utilization", status.percentBusUtilization);
+    logger.log(now, "SystemStats/CANBus/can-s2/OffCount", status.busOffCount);
+    logger.log(now, "SystemStats/CANBus/can-s2/TxFullCount", status.txFullCount);
+    logger.log(now, "SystemStats/CANBus/can-s2/ReceiveErrorCount", status.receiveErrorCount);
+    logger.log(now, "SystemStats/CANBus/can-s2/TransmitErrorCount", status.transmitErrorCount);
+
+
+    CANJNI.getCANStatus(3, status);
+    logger.log(now, "SystemStats/CANBus/can-s3/Utilization", status.percentBusUtilization);
+    logger.log(now, "SystemStats/CANBus/can-s3/OffCount", status.busOffCount);
+    logger.log(now, "SystemStats/CANBus/can-s3/TxFullCount", status.txFullCount);
+    logger.log(now, "SystemStats/CANBus/can-s3/ReceiveErrorCount", status.receiveErrorCount);
+    logger.log(now, "SystemStats/CANBus/can-s3/TransmitErrorCount", status.transmitErrorCount);
+
+
+    CANJNI.getCANStatus(4, status);
+    logger.log(now, "SystemStats/CANBus/can-s4/Utilization", status.percentBusUtilization);
+    logger.log(now, "SystemStats/CANBus/can-s4/OffCount", status.busOffCount);
+    logger.log(now, "SystemStats/CANBus/can-s4/TxFullCount", status.txFullCount);
+    logger.log(now, "SystemStats/CANBus/can-s4/ReceiveErrorCount", status.receiveErrorCount);
+    logger.log(now, "SystemStats/CANBus/can-s4/TransmitErrorCount", status.transmitErrorCount);
+
+    logger.log(now, "SystemStats/EpochTimeMicros", HALUtil.getMonotonicTime(), MICROSECONDS_UNIT_STRING);
   }
 
   private void logPdh(long now) {
@@ -148,7 +179,7 @@ public class ExtrasLogger implements AutoCloseable {
   }
 
   private void logRadio() {
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     radioLogUtil.refresh();
 
     logger.log(now, "RadioStatus/Connected", radioLogUtil.radioLogResult.isConnected);

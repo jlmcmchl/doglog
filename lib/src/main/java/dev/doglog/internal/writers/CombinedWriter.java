@@ -230,7 +230,7 @@ public class CombinedWriter {
   }
 
   private void printOptions() {
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     log(now, "DogLog/Options", options.toString());
   }
 
