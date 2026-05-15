@@ -37,7 +37,7 @@ public record DogLogOptions(
     BooleanSupplier ntTunables,
     boolean useLogThread) {
   private static boolean isNotOnFms() {
-    return !DriverStation.isFMSAttached();
+    return !RobotState.isFMSAttached();
   }
 
   public static final double LOOP_PERIOD_SECONDS = 0.02;
