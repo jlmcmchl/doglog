@@ -33,9 +33,9 @@ import org.wpilib.util.struct.StructSerializable;
 /** A logger based on WPILib's {@link DataLogManager} */
 public class DogLog {
   static {
-    HAL.report(
-        FRCNetComm.tResourceType.kResourceType_LoggingFramework,
-        FRCNetComm.tInstances.kLoggingFramework_DogLog);
+    HAL.reportUsage(
+        "LoggingFramework",
+        "DogLog");
   }
 
   /** The options to use for the logger. */
