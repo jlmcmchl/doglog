@@ -270,7 +270,7 @@ public class CombinedWriter {
    */
   public void afterLogThreadStart() {
     if (!dataLogReporter.isLogDestinationValid()) {
-      DogLog.logFault("[DogLog] UNSAFE_LOG_DESTINATION", AlertType.kWarning);
+      DogLog.logFault("[DogLog] UNSAFE_LOG_DESTINATION", Level.MEDIUM);
     }
   }
 

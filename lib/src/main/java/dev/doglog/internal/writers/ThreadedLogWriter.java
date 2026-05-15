@@ -55,7 +55,7 @@ public class ThreadedLogWriter implements LogWriterHighLevel {
       // We also need to increment the counter before we call logFault, since the logFault function
       // will potentially call this one
 
-      FaultLogger.addFault(this, "[DogLog] MAX_QUEUED_LOGS", AlertType.kError);
+      FaultLogger.addFault(this, "[DogLog] MAX_QUEUED_LOGS", Level.HIGH);
     }
 
     if (queueFullMessageCount == MAX_QUEUE_FULL_MESSAGES) {
@@ -284,7 +284,7 @@ public class ThreadedLogWriter implements LogWriterHighLevel {
         DriverStation.reportWarning(
             "[DogLog] RISKY_QUEUE_RESIZE: New queue capacity is smaller than the old queue capacity, this has the potential to drop queued log entries",
             false);
-        FaultLogger.addFault(this, "[DogLog] RISKY_QUEUE_RESIZE", AlertType.kWarning);
+        FaultLogger.addFault(this, "[DogLog] RISKY_QUEUE_RESIZE", Level.MEDIUM);
       }
 
       queue.drainTo(newQueue, newQueue.remainingCapacity());
@@ -296,7 +296,7 @@ public class ThreadedLogWriter implements LogWriterHighLevel {
                 + droppedLogs
                 + " log entries",
             true);
-        FaultLogger.addFault(this, "[DogLog] QUEUE_RESIZE_DROPPED_LOGS", AlertType.kError);
+        FaultLogger.addFault(this, "[DogLog] QUEUE_RESIZE_DROPPED_LOGS", Level.HIGH);
       }
 
       logThread = new LogThread(newQueue, newOptions);

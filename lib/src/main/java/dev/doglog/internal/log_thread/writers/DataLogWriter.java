@@ -313,7 +313,7 @@ public class DataLogWriter implements LogWriterLowLevel {
    */
   public boolean isLogDestinationValid() {
     // See DataLogManager#makeLogDir() for source on this logic
-    return !(RobotBase.getRuntimeType() == RuntimeType.kRoboRIO
+    return !(RobotBase.getRuntimeType() == RuntimeType.SYSTEMCORE
         && DataLogManager.getLogDir().equals(RIO1_DISK_LOG_DIR));
   }
 
