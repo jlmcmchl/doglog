@@ -30,7 +30,7 @@ public class FaultLogger {
     var newCount = previousCount == null ? 1 : previousCount + 1;
     FAULT_COUNTS.put(faultName, newCount);
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
 
     if (previousCount == null) {
       // A new fault has been seen
@@ -75,7 +75,7 @@ public class FaultLogger {
     var newCount = previousCount - 1;
     FAULT_COUNTS.put(faultName, newCount);
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, "Faults/Counts/" + faultName, false, newCount);
 
     if (newCount == 0) {
@@ -97,7 +97,7 @@ public class FaultLogger {
     var previousValue = FAULT_COUNTS.replace(faultName, 0);
 
     if (previousValue != null) {
-      var now = HALUtil.getFPGATime();
+      var now = HALUtil.getMonotonicTime();
       logger.log(now, "Faults/Counts/" + faultName, false, 0);
 
       var alert = FAULT_ALERTS.get(faultName);

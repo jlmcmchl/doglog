@@ -140,7 +140,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -150,7 +150,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -160,7 +160,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -177,7 +177,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value, unit);
   }
 
@@ -200,7 +200,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -214,7 +214,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value, unit);
   }
 
@@ -246,7 +246,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -263,7 +263,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value, unit);
   }
 
@@ -273,7 +273,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -287,7 +287,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value, unit);
   }
 
@@ -297,7 +297,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -307,7 +307,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -324,7 +324,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value, unit);
   }
 
@@ -334,7 +334,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -348,7 +348,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value, unit);
   }
 
@@ -360,7 +360,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -370,7 +370,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -380,7 +380,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -395,7 +395,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value, customTypeString);
   }
 
@@ -405,7 +405,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -415,7 +415,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -425,7 +425,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -435,7 +435,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -445,7 +445,7 @@ public class DogLog {
       return;
     }
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     logger.log(now, key, false, value);
   }
 
@@ -568,7 +568,7 @@ public class DogLog {
    * @param key The key to log the timestamp to.
    */
   public static void timestamp(String key) {
-    log(key, Timer.getFPGATimestamp());
+    log(key, Timer.getMonotonicTimestamp());
   }
 
   /**
@@ -579,7 +579,7 @@ public class DogLog {
    * @see DogLog#timeEnd(String)
    */
   public static void time(String key) {
-    epochLogger.time(key, HALUtil.getFPGATime());
+    epochLogger.time(key, HALUtil.getMonotonicTime());
   }
 
   /**
@@ -602,7 +602,7 @@ public class DogLog {
    * @see DogLog#time(String)
    */
   public static void timeEnd(String key) {
-    epochLogger.timeEnd(key, HALUtil.getFPGATime(), logger);
+    epochLogger.timeEnd(key, HALUtil.getMonotonicTime(), logger);
   }
 
   /**

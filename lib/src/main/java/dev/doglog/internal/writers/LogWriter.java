@@ -21,7 +21,7 @@ public class LogWriter implements LogWriterHighLevel {
 
     extras = new ExtrasLogger(this, initialOptions);
 
-    var now = HALUtil.getFPGATime();
+    var now = HALUtil.getMonotonicTime();
     log(now, "DogLog/QueuedLogs", false, -1);
     log(now, "DogLog/QueueRemainingCapacity", false, -1);
   }
