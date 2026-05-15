@@ -1,14 +1,14 @@
 package dev.doglog.internal;
 
 import dev.doglog.internal.writers.LogWriterHighLevel;
-import edu.wpi.first.hal.HALUtil;
-import edu.wpi.first.wpilibj.Alert;
-import edu.wpi.first.wpilibj.Alert.AlertType;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import org.jspecify.annotations.Nullable;
+import org.wpilib.driverstation.Alert;
+import org.wpilib.driverstation.Alert.Level;
+import org.wpilib.hardware.hal.HALUtil;
 
 /**
  * Provides the interface for logging faults. Faults are a DogLog concept that were created prior to

@@ -1,8 +1,8 @@
 package dev.doglog.internal.log_thread;
 
-import edu.wpi.first.util.struct.Struct;
-import edu.wpi.first.util.struct.StructGenerator;
-import edu.wpi.first.util.struct.StructSerializable;
+import org.wpilib.util.struct.Struct;
+import org.wpilib.util.struct.StructGenerator;
+import org.wpilib.util.struct.StructSerializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;

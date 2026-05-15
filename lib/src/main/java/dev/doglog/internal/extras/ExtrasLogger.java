@@ -1,21 +1,21 @@
 package dev.doglog.internal.extras;
 
-import static edu.wpi.first.units.Units.Amps;
-import static edu.wpi.first.units.Units.Celsius;
-import static edu.wpi.first.units.Units.Joules;
-import static edu.wpi.first.units.Units.Microseconds;
-import static edu.wpi.first.units.Units.Volts;
-import static edu.wpi.first.units.Units.Watts;
+import static org.wpilib.units.Units.Amps;
+import static org.wpilib.units.Units.Celsius;
+import static org.wpilib.units.Units.Joules;
+import static org.wpilib.units.Units.Microseconds;
+import static org.wpilib.units.Units.Volts;
+import static org.wpilib.units.Units.Watts;
 
 import dev.doglog.DogLogOptions;
 import dev.doglog.internal.writers.LogWriterHighLevel;
-import edu.wpi.first.hal.HAL;
-import edu.wpi.first.hal.HALUtil;
-import edu.wpi.first.hal.PowerJNI;
-import edu.wpi.first.hal.can.CANJNI;
-import edu.wpi.first.hal.can.CANStatus;
-import edu.wpi.first.wpilibj.Notifier;
-import edu.wpi.first.wpilibj.PowerDistribution;
+import org.wpilib.hardware.hal.HAL;
+import org.wpilib.hardware.hal.HALUtil;
+import org.wpilib.hardware.hal.PowerJNI;
+import org.wpilib.hardware.hal.can.CANJNI;
+import org.wpilib.hardware.hal.can.CANStatus;
+import org.wpilib.system.Notifier;
+import org.wpilib.hardware.power.PowerDistribution;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 

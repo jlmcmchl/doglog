@@ -3,9 +3,9 @@ package dev.doglog.internal.writers;
 import dev.doglog.DogLogOptions;
 import dev.doglog.internal.extras.ExtrasLogger;
 import dev.doglog.internal.log_thread.writers.CombinedWriter;
-import edu.wpi.first.hal.HALUtil;
-import edu.wpi.first.util.struct.StructSerializable;
-import edu.wpi.first.wpilibj.PowerDistribution;
+import org.wpilib.hardware.hal.HALUtil;
+import org.wpilib.util.struct.StructSerializable;
+import org.wpilib.hardware.power.PowerDistribution;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 

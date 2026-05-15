@@ -1,6 +1,6 @@
 package dev.doglog.internal.tunable.on_change;
 
-import edu.wpi.first.util.function.BooleanConsumer;
+import org.wpilib.util.function.BooleanConsumer;
 import org.jspecify.annotations.NullMarked;
 
 @NullMarked

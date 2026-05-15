@@ -1,7 +1,7 @@
 package dev.doglog.internal.log_thread.entries;
 
 import dev.doglog.internal.log_thread.writers.CombinedWriter;
-import edu.wpi.first.util.struct.StructSerializable;
+import org.wpilib.util.struct.StructSerializable;
 
 public class StructArrayQueuedLogEntry<T extends StructSerializable> extends BaseQueuedLogEntry {
   public final T[] value;

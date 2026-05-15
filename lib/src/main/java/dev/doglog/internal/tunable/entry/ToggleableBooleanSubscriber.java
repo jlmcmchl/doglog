@@ -1,8 +1,8 @@
 package dev.doglog.internal.tunable.entry;
 
-import edu.wpi.first.networktables.BooleanSubscriber;
-import edu.wpi.first.networktables.BooleanTopic;
-import edu.wpi.first.networktables.TimestampedBoolean;
+import org.wpilib.networktables.BooleanSubscriber;
+import org.wpilib.networktables.BooleanTopic;
+import org.wpilib.networktables.TimestampedBoolean;
 import java.util.function.BooleanSupplier;
 import org.jspecify.annotations.NullMarked;
 

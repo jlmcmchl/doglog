@@ -1,11 +1,11 @@
 package dev.doglog.internal;
 
 import dev.doglog.internal.writers.LogWriterHighLevel;
-import edu.wpi.first.hal.HALUtil;
-import edu.wpi.first.units.Measure;
-import edu.wpi.first.units.Unit;
-import edu.wpi.first.util.struct.StructSerializable;
 import org.jspecify.annotations.Nullable;
+import org.wpilib.hardware.hal.HALUtil;
+import org.wpilib.units.Measure;
+import org.wpilib.units.Unit;
+import org.wpilib.util.struct.StructSerializable;
 
 public class DogLogForceNt {
   private boolean enabled;
