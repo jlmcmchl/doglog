@@ -1,8 +1,8 @@
 package dev.doglog.internal.tunable.entry;
 
-import edu.wpi.first.networktables.DoubleSubscriber;
-import edu.wpi.first.networktables.DoubleTopic;
-import edu.wpi.first.networktables.TimestampedDouble;
+import org.wpilib.networktables.DoubleSubscriber;
+import org.wpilib.networktables.DoubleTopic;
+import org.wpilib.networktables.TimestampedDouble;
 import java.util.function.BooleanSupplier;
 
 public class ToggleableDoubleSubscriber implements DoubleSubscriber {

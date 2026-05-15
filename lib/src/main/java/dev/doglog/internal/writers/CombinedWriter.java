@@ -2,10 +2,10 @@ package dev.doglog.internal.writers;
 
 import dev.doglog.DogLogOptions;
 import dev.doglog.internal.StructRegistry;
-import edu.wpi.first.hal.HALUtil;
-import edu.wpi.first.util.struct.Struct;
-import edu.wpi.first.util.struct.StructSerializable;
 import org.jspecify.annotations.Nullable;
+import org.wpilib.hardware.hal.HALUtil;
+import org.wpilib.util.struct.Struct;
+import org.wpilib.util.struct.StructSerializable;
 
 public class CombinedWriter {
   /** The NetworkTables table to log to, if NetworkTables publishing is enabled. */

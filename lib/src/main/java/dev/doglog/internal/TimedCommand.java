@@ -1,8 +1,9 @@
 package dev.doglog.internal;
 
+import org.wpilib.command2.Command;
+import org.wpilib.command2.CommandScheduler;
+
 import dev.doglog.DogLog;
-import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 public class TimedCommand extends Command {
   private final Command command;

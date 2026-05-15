@@ -1,9 +1,10 @@
 package dev.doglog.internal;
 
-import edu.wpi.first.util.struct.Struct;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+
+import org.wpilib.util.struct.Struct;
 
 /** Used internally for working with WPILib {@link Struct}s. */
 public class StructRegistry {

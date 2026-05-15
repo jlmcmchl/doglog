@@ -1,11 +1,12 @@
 package dev.doglog.internal.extras;
 
-import edu.wpi.first.wpilibj.RobotController;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
+
+import org.wpilib.system.RobotController;
 
 class RadioLogUtil {
   private static final Duration REQUEST_TIMEOUT_DURATION = Duration.ofSeconds(1);

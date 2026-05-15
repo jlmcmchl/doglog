@@ -2,6 +2,7 @@ package dev.doglog;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import java.util.function.BooleanSupplier;
+import org.wpilib.driverstation.RobotState;
 
 /**
  * Options for configuring DogLog.
