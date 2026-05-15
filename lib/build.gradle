@@ -47,7 +47,7 @@ tasks.withType(JavaCompile).configureEach {
 	}
 }
 
-ext.wpilibVersion = "2026.+"
+ext.wpilibVersion = "2027.0.0-alpha-6"
 
 repositories {
 	// Use Maven Central for resolving dependencies.
@@ -59,14 +59,16 @@ if (project.hasProperty('releaseMode')) {
 } else {
 	wpilibRepositories.addAllDevelopmentRepositories(project)
 }
+wpilibRepositories.use2027Repos()
 
 dependencies {
-	implementation "edu.wpi.first.ntcore:ntcore-java:$wpilibVersion"
-	implementation "edu.wpi.first.wpilibj:wpilibj-java:$wpilibVersion"
-	implementation "edu.wpi.first.wpiutil:wpiutil-java:$wpilibVersion"
-	implementation "edu.wpi.first.wpiunits:wpiunits-java:$wpilibVersion"
-	implementation "edu.wpi.first.hal:hal-java:$wpilibVersion"
-	implementation "edu.wpi.first.wpilibNewCommands:wpilibNewCommands-java:$wpilibVersion"
+	implementation "org.wpilib.ntcore:ntcore-java:$wpilibVersion"
+	implementation "org.wpilib.wpilibj:wpilibj-java:$wpilibVersion"
+	implementation "org.wpilib.wpiutil:wpiutil-java:$wpilibVersion"
+	implementation "org.wpilib.wpiunits:wpiunits-java:$wpilibVersion"
+	implementation "org.wpilib.hal:hal-java:$wpilibVersion"
+	implementation "org.wpilib.commandsv2:commandsv2-java:$wpilibVersion"
+	implementation "org.wpilib.datalog:datalog-java:$wpilibVersion"
 
 	errorprone "com.google.errorprone:error_prone_core:2.49.0"
 	errorprone "com.uber.nullaway:nullaway:0.13.4"
