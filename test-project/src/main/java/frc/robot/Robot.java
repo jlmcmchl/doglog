@@ -4,6 +4,7 @@
 
 package frc.robot;
 
+import static org.wpilib.units.Units.Centimeters;
 import static org.wpilib.units.Units.Meters;
 
 import dev.doglog.DogLog;
@@ -55,7 +56,7 @@ public class Robot extends TimedRobot {
     DogLog.log("Units/Height1", 123, "inches");
     DogLog.log("Units/Height2", 123, Meters);
     // TODO: this triggers a compiler error?
-    // DogLog.log("Units/Height3", Centimeters.of(123));
+    DogLog.log("Units/Height3", Centimeters.of(123));
     DogLog.log("Units/Height4", 123, "Meter");
     DogLog.log("Units/Height5", 123, "meter");
     // DogLog.log("Units/Height7", motor.getPosition().getValue());
