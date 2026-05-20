@@ -2,7 +2,9 @@ package dev.doglog.internal.log_thread.writers;
 
 import dev.doglog.DogLogOptions;
 import dev.doglog.internal.writers.LogWriterLowLevel;
-import org.wpilib.networktables.NetworkTableInstance;
+import java.util.HashMap;
+import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 import org.wpilib.datalog.BooleanArrayLogEntry;
 import org.wpilib.datalog.BooleanLogEntry;
 import org.wpilib.datalog.DataLog;
@@ -17,14 +19,12 @@ import org.wpilib.datalog.StringArrayLogEntry;
 import org.wpilib.datalog.StringLogEntry;
 import org.wpilib.datalog.StructArrayLogEntry;
 import org.wpilib.datalog.StructLogEntry;
-import org.wpilib.util.struct.Struct;
 import org.wpilib.driverstation.DriverStation;
 import org.wpilib.framework.RobotBase;
+import org.wpilib.networktables.NetworkTableInstance;
 import org.wpilib.system.DataLogManager;
 import org.wpilib.system.RuntimeType;
-import java.util.HashMap;
-import java.util.Map;
-import org.jspecify.annotations.NullMarked;
+import org.wpilib.util.struct.Struct;
 
 /** Logs to a WPILib {@link DataLog}. */
 @NullMarked

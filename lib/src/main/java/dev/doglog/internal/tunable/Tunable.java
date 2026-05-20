@@ -12,6 +12,14 @@ import dev.doglog.internal.tunable.on_change.DoubleOnChange;
 import dev.doglog.internal.tunable.on_change.FloatOnChange;
 import dev.doglog.internal.tunable.on_change.LongOnChange;
 import dev.doglog.internal.tunable.on_change.OnChange;
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
+import java.util.function.LongConsumer;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 import org.wpilib.networktables.BooleanSubscriber;
 import org.wpilib.networktables.DoubleArraySubscriber;
 import org.wpilib.networktables.DoubleSubscriber;
@@ -22,17 +30,9 @@ import org.wpilib.networktables.NetworkTableEvent.Kind;
 import org.wpilib.networktables.NetworkTableInstance;
 import org.wpilib.networktables.NetworkTableListenerPoller;
 import org.wpilib.networktables.StringSubscriber;
+import org.wpilib.system.Notifier;
 import org.wpilib.util.function.BooleanConsumer;
 import org.wpilib.util.function.FloatConsumer;
-import org.wpilib.system.Notifier;
-import java.util.EnumSet;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Consumer;
-import java.util.function.DoubleConsumer;
-import java.util.function.LongConsumer;
-import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 
 @NullMarked
 public class Tunable implements AutoCloseable {

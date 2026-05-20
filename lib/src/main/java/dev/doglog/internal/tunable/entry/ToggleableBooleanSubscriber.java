@@ -1,10 +1,10 @@
 package dev.doglog.internal.tunable.entry;
 
+import java.util.function.BooleanSupplier;
+import org.jspecify.annotations.NullMarked;
 import org.wpilib.networktables.BooleanSubscriber;
 import org.wpilib.networktables.BooleanTopic;
 import org.wpilib.networktables.TimestampedBoolean;
-import java.util.function.BooleanSupplier;
-import org.jspecify.annotations.NullMarked;
 
 @NullMarked
 public class ToggleableBooleanSubscriber implements BooleanSubscriber {

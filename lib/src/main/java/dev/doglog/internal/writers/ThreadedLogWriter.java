@@ -28,14 +28,14 @@ import dev.doglog.internal.log_thread.entries.StringCustomTypeQueuedLogEntry;
 import dev.doglog.internal.log_thread.entries.StringQueuedLogEntry;
 import dev.doglog.internal.log_thread.entries.StructArrayQueuedLogEntry;
 import dev.doglog.internal.log_thread.entries.StructQueuedLogEntry;
-import org.wpilib.util.struct.StructSerializable;
-import org.wpilib.driverstation.Alert.Level;
-import org.wpilib.driverstation.DriverStationErrors;
-import org.wpilib.hardware.power.PowerDistribution;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
+import org.wpilib.driverstation.Alert.Level;
+import org.wpilib.driverstation.DriverStationErrors;
+import org.wpilib.hardware.power.PowerDistribution;
+import org.wpilib.util.struct.StructSerializable;
 
 /**
  * Provides an interface for queueing logs to be recorded by the log thread. Also responsible for

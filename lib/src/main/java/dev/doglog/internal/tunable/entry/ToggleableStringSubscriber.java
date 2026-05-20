@@ -1,10 +1,10 @@
 package dev.doglog.internal.tunable.entry;
 
+import java.util.function.BooleanSupplier;
+import org.jspecify.annotations.NullMarked;
 import org.wpilib.networktables.StringSubscriber;
 import org.wpilib.networktables.StringTopic;
 import org.wpilib.networktables.TimestampedString;
-import java.util.function.BooleanSupplier;
-import org.jspecify.annotations.NullMarked;
 
 @NullMarked
 public class ToggleableStringSubscriber implements StringSubscriber {

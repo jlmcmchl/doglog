@@ -3,11 +3,11 @@ package dev.doglog.internal.writers;
 import dev.doglog.DogLogOptions;
 import dev.doglog.internal.extras.ExtrasLogger;
 import dev.doglog.internal.log_thread.writers.CombinedWriter;
-import org.wpilib.hardware.hal.HALUtil;
-import org.wpilib.util.struct.StructSerializable;
-import org.wpilib.hardware.power.PowerDistribution;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
+import org.wpilib.hardware.hal.HALUtil;
+import org.wpilib.hardware.power.PowerDistribution;
+import org.wpilib.util.struct.StructSerializable;
 
 /** Writes logs directly from the main thread. */
 @NullMarked

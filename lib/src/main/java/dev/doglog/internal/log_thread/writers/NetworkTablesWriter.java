@@ -1,6 +1,9 @@
 package dev.doglog.internal.log_thread.writers;
 
 import dev.doglog.internal.writers.LogWriterLowLevel;
+import java.util.HashMap;
+import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 import org.wpilib.networktables.BooleanArrayPublisher;
 import org.wpilib.networktables.BooleanPublisher;
 import org.wpilib.networktables.DoubleArrayPublisher;
@@ -12,6 +15,7 @@ import org.wpilib.networktables.IntegerArrayPublisher;
 import org.wpilib.networktables.IntegerPublisher;
 import org.wpilib.networktables.NetworkTable;
 import org.wpilib.networktables.NetworkTableInstance;
+import org.wpilib.networktables.PubSubOption;
 import org.wpilib.networktables.RawPublisher;
 import org.wpilib.networktables.StringArrayPublisher;
 import org.wpilib.networktables.StringPublisher;
@@ -19,11 +23,6 @@ import org.wpilib.networktables.StructArrayPublisher;
 import org.wpilib.networktables.StructPublisher;
 import org.wpilib.networktables.Topic;
 import org.wpilib.util.struct.Struct;
-
-import java.util.HashMap;
-import java.util.Map;
-import org.jspecify.annotations.NullMarked;
-import org.wpilib.networktables.PubSubOption;
 
 /** Logs to NetworkTables. */
 @NullMarked

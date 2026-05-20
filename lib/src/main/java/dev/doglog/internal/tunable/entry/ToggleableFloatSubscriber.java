@@ -1,10 +1,10 @@
 package dev.doglog.internal.tunable.entry;
 
+import java.util.function.BooleanSupplier;
+import org.jspecify.annotations.NullMarked;
 import org.wpilib.networktables.FloatSubscriber;
 import org.wpilib.networktables.FloatTopic;
 import org.wpilib.networktables.TimestampedFloat;
-import java.util.function.BooleanSupplier;
-import org.jspecify.annotations.NullMarked;
 
 @NullMarked
 public class ToggleableFloatSubscriber implements FloatSubscriber {

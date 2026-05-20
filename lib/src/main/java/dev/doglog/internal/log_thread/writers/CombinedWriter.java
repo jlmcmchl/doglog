@@ -4,13 +4,13 @@ import dev.doglog.DogLog;
 import dev.doglog.DogLogOptions;
 import dev.doglog.internal.log_thread.LogThread;
 import dev.doglog.internal.log_thread.StructRegistry;
-import org.wpilib.hardware.hal.HALUtil;
-import org.wpilib.util.struct.Struct;
-import org.wpilib.util.struct.StructSerializable;
-import org.wpilib.driverstation.Alert.Level;
 import java.util.Arrays;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.NullMarked;
+import org.wpilib.driverstation.Alert.Level;
+import org.wpilib.hardware.hal.HALUtil;
+import org.wpilib.util.struct.Struct;
+import org.wpilib.util.struct.StructSerializable;
 
 @NullMarked
 public class CombinedWriter {

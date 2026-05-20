@@ -26,9 +26,9 @@ import dev.doglog.internal.log_thread.entries.StringQueuedLogEntry;
 import dev.doglog.internal.log_thread.entries.StructArrayQueuedLogEntry;
 import dev.doglog.internal.log_thread.entries.StructQueuedLogEntry;
 import dev.doglog.internal.log_thread.writers.CombinedWriter;
+import java.util.concurrent.BlockingQueue;
 import org.wpilib.hardware.hal.HALUtil;
 import org.wpilib.system.Timer;
-import java.util.concurrent.BlockingQueue;
 
 /** A thread that processes queued log entries and writes them to the log file. */
 public class LogThread extends Thread {

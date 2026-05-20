@@ -33,9 +33,7 @@ import org.wpilib.util.struct.StructSerializable;
 /** A logger based on WPILib's {@link DataLogManager} */
 public class DogLog {
   static {
-    HAL.reportUsage(
-        "LoggingFramework",
-        "DogLog");
+    HAL.reportUsage("LoggingFramework", "DogLog");
   }
 
   /** The options to use for the logger. */
@@ -456,8 +454,8 @@ public class DogLog {
    * <p>See https://doglog.dev/guides/faults for more information.
    *
    * @param faultName The name of the fault to log.
-   * @param level The level of alert to create for the fault, or <code>null</code> if it should
-   *     not create an alert
+   * @param level The level of alert to create for the fault, or <code>null</code> if it should not
+   *     create an alert
    * @see DogLog#decreaseFault(String)
    */
   public static void logFault(@Nullable String faultName, @Nullable Level level) {

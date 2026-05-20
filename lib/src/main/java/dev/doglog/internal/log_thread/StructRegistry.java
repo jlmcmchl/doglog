@@ -1,11 +1,11 @@
 package dev.doglog.internal.log_thread;
 
-import org.wpilib.util.struct.Struct;
-import org.wpilib.util.struct.StructGenerator;
-import org.wpilib.util.struct.StructSerializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import org.wpilib.util.struct.Struct;
+import org.wpilib.util.struct.StructGenerator;
+import org.wpilib.util.struct.StructSerializable;
 
 /** Used internally for working with WPILib {@link Struct}s. */
 public class StructRegistry {

@@ -9,15 +9,15 @@ import static org.wpilib.units.Units.Watts;
 
 import dev.doglog.DogLogOptions;
 import dev.doglog.internal.writers.LogWriterHighLevel;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 import org.wpilib.hardware.hal.HAL;
 import org.wpilib.hardware.hal.HALUtil;
 import org.wpilib.hardware.hal.PowerJNI;
 import org.wpilib.hardware.hal.can.CANJNI;
 import org.wpilib.hardware.hal.can.CANStatus;
-import org.wpilib.system.Notifier;
 import org.wpilib.hardware.power.PowerDistribution;
-import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
+import org.wpilib.system.Notifier;
 
 /** Logs "extra" information. */
 @NullMarked
@@ -103,18 +103,22 @@ public class ExtrasLogger implements AutoCloseable {
     logger.log(now, "SystemStats/3v3Rail/CurrentFaults", false, PowerJNI.getUserCurrentFaults3V3());
 
     // logger.log(
-    //     now, "SystemStats/5vRail/Voltage", false, PowerJNI.getUserVoltage5V(), VOLTS_UNIT_STRING);
+    //     now, "SystemStats/5vRail/Voltage", false, PowerJNI.getUserVoltage5V(),
+    // VOLTS_UNIT_STRING);
     // logger.log(
     //     now, "SystemStats/5vRail/Current", false, PowerJNI.getUserCurrent5V(), AMPS_UNIT_STRING);
     // logger.log(now, "SystemStats/5vRail/Active", false, PowerJNI.getUserActive5V());
-    // logger.log(now, "SystemStats/5vRail/CurrentFaults", false, PowerJNI.getUserCurrentFaults5V());
+    // logger.log(now, "SystemStats/5vRail/CurrentFaults", false,
+    // PowerJNI.getUserCurrentFaults5V());
 
     // logger.log(
-    //     now, "SystemStats/6vRail/Voltage", false, PowerJNI.getUserVoltage6V(), VOLTS_UNIT_STRING);
+    //     now, "SystemStats/6vRail/Voltage", false, PowerJNI.getUserVoltage6V(),
+    // VOLTS_UNIT_STRING);
     // logger.log(
     //     now, "SystemStats/6vRail/Current", false, PowerJNI.getUserCurrent6V(), AMPS_UNIT_STRING);
     // logger.log(now, "SystemStats/6vRail/Active", false, PowerJNI.getUserActive6V());
-    // logger.log(now, "SystemStats/6vRail/CurrentFaults", false, PowerJNI.getUserCurrentFaults6V());
+    // logger.log(now, "SystemStats/6vRail/CurrentFaults", false,
+    // PowerJNI.getUserCurrentFaults6V());
 
     logger.log(
         now,
@@ -129,15 +133,22 @@ public class ExtrasLogger implements AutoCloseable {
   private void logCan(long now) {
     for (int i = 0; i < 5; i++) {
       CANJNI.getCANStatus(i, status);
-      logger.log(now, "SystemStats/CANBus/" + i + "/Utilization", false, status.percentBusUtilization);
+      logger.log(
+          now, "SystemStats/CANBus/" + i + "/Utilization", false, status.percentBusUtilization);
       logger.log(now, "SystemStats/CANBus/" + i + "/OffCount", false, status.busOffCount);
       logger.log(now, "SystemStats/CANBus/" + i + "/TxFullCount", false, status.txFullCount);
-      logger.log(now, "SystemStats/CANBus/" + i + "/ReceiveErrorCount", false, status.receiveErrorCount);
-      logger.log(now, "SystemStats/CANBus/" + i + "/TransmitErrorCount", false, status.transmitErrorCount);
+      logger.log(
+          now, "SystemStats/CANBus/" + i + "/ReceiveErrorCount", false, status.receiveErrorCount);
+      logger.log(
+          now, "SystemStats/CANBus/" + i + "/TransmitErrorCount", false, status.transmitErrorCount);
     }
 
     logger.log(
-        now, "SystemStats/EpochTimeMicros", false, HALUtil.getMonotonicTime(), MICROSECONDS_UNIT_STRING);
+        now,
+        "SystemStats/EpochTimeMicros",
+        false,
+        HALUtil.getMonotonicTime(),
+        MICROSECONDS_UNIT_STRING);
   }
 
   private void logPdh(long now) {

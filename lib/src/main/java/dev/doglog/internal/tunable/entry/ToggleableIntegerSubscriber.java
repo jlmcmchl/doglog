@@ -1,10 +1,10 @@
 package dev.doglog.internal.tunable.entry;
 
+import java.util.function.BooleanSupplier;
+import org.jspecify.annotations.NullMarked;
 import org.wpilib.networktables.IntegerSubscriber;
 import org.wpilib.networktables.IntegerTopic;
 import org.wpilib.networktables.TimestampedInteger;
-import java.util.function.BooleanSupplier;
-import org.jspecify.annotations.NullMarked;
 
 @NullMarked
 public class ToggleableIntegerSubscriber implements IntegerSubscriber {
