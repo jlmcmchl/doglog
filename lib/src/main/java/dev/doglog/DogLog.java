@@ -231,15 +231,6 @@ public class DogLog {
     log(key, value, unit.name());
   }
 
-  /** Log a measure, preserving the user-specified unit. */
-  public static void log(String key, @Nullable Measure<?> value) {
-    if (!enabled || value == null) {
-      return;
-    }
-
-    log(key, value.magnitude(), value.unit().name());
-  }
-
   /** Log a float array. */
   public static void log(String key, float @Nullable [] value) {
     if (!enabled || value == null) {
@@ -432,6 +423,16 @@ public class DogLog {
   /** Log a record. */
   public static void log(String key, @Nullable Record value) {
     if (!enabled || value == null) {
+      return;
+    }
+
+    if (value instanceof Measure<?> measure) {
+      var unit = measure.unit();
+      if (unit == null) {
+        log(key, measure.magnitude());
+        return;
+      }
+      log(key, measure.magnitude(), unit.name());
       return;
     }
 
